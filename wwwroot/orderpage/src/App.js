@@ -12,6 +12,14 @@ class App extends Component {
       currentPage: 'order',
       currentItem: items[0]
     }
+
+    this.changePage = this.changePage.bind(this);
+  }
+
+  changePage(newPage) {
+    this.setState({
+      currentPage: newPage
+    });
   }
 
   render() {
@@ -20,7 +28,11 @@ class App extends Component {
     switch (this.state.currentPage) {
       default:
       case 'order':
-        page = <OrderPage />
+        page = <OrderPage 
+                  item={this.state.currentItem}
+                  pageChanger={this.changePage} />
+        break;
+      case 'payment':
         break;
     }
 
