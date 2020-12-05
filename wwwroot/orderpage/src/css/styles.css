@@ -7,6 +7,8 @@
     --backward-pressed: #DBB2FF;
     --background-purple: #E5E5E5;
     --image-background: #F2E7FE;
+
+    font-family: sans-serif;
 }
 
 html, body {
@@ -33,7 +35,6 @@ html, body {
     height: 68px;
     padding: 16px 22px;
     color: white;
-    font-family: sans-serif;
     font-weight: 800;
     border-radius: 16px 16px 0 0;
 }
@@ -43,4 +44,110 @@ html, body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+}
+
+/* Pane */
+.content-pane {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 32px;
+}
+
+/* Order Page Specific */
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    margin: 0 auto 20px auto;
+    background-color: var(--image-background);
+    width: 294px;
+    height: 294px;
+    border-radius: 8px;
+}
+
+.img-container img {
+    align-self: center;
+    height: 163px;
+    width: 150px;
+}
+
+/* TODO -> Get actual value */
+.info-container {
+    margin: 20px 0;
+}
+
+.info-container * {
+    margin: 0;
+    padding: 0;
+}
+
+.spaced-info-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.light-text {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.strong-text {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.price-text {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Button Styles */
+button {
+    outline: none;
+    border: none;
+}
+
+.btn {
+    align-items: center;
+    padding: 8px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    box-shadow: -2px 2px 0px 5px #000000;
+    border-radius: 4px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-forward:hover {
+    background-color: var(--hover-purple);
+}
+
+.btn-forward:active {
+    background-color: var(--pressed-purple);
+}
+
+.btn-forward {
+    background-color: var(--default-purple);
+}
+
+.btn-backward {
+    background-color: #FFFFFF;
+    width: 92px;
+    height: 40px;
+    color: #000;
+}
+
+.btn-backward:hover {
+    background-color: var(--image-background);
+}
+
+.btn-backward:active {
+    background-color: var(--backward-pressed);
 }
