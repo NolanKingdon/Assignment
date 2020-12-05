@@ -1,0 +1,46 @@
+/* Globals */
+* {
+    --pressed-purple: #5600E8;
+    --hover-purple: #6200EE;
+    --default-purple: #7F39FB;
+    --list-item-purple: #BB86FC;
+    --backward-pressed: #DBB2FF;
+    --background-purple: #E5E5E5;
+    --image-background: #F2E7FE;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--background-purple);
+}
+
+/* Card */
+
+.card-wrapper {
+    background: #FFFFFF;
+    box-shadow: -2px 2px 0px 5px #000000;
+    border-radius: 16px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header-wrapper {
+    background-color: var(--default-purple);
+    width: 100%;
+    height: 68px;
+    padding: 16px 22px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 800;
+    border-radius: 16px 16px 0 0;
+}
+
+/* Content Body */
+.content-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
