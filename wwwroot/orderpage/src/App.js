@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import items from './data/items';
+import './css/styles.css';
+import OrderPage from './components/OrderPage';
 
 class App extends Component {
 
@@ -13,9 +15,18 @@ class App extends Component {
   }
 
   render() {
+    let page;
+
+    switch (this.state.currentPage) {
+      default:
+      case 'order':
+        page = <OrderPage />
+        break;
+    }
+
     return (
       <div className="App">
-        
+          {page}
       </div>
     );
   }
