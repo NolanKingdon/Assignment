@@ -1,0 +1,16 @@
+{
+  "name": "assignment",
+  "version": "1.0.0",
+  "description": "Takehome assignment for CaseWare",
+  "main": "index.js",
+  "scripts": {
+    "start": "start npm run start-dev && npm run start-server",
+    "start-dev": "cd wwwroot/orderpage && npm run build && npm run start",
+    "start-server": "node index.js"
+  },
+  "author": "Nolan Kingdon",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
