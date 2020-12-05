@@ -9,7 +9,7 @@ const Pane = (props) => {
     let width = props.width ?? 100;
 
     return (
-        <div className='content-pane' stlye={{width: `${width}%`}}>
+        <div className='content-pane' style={{width: `${width}%`}}>
             {props.children}
         </div>
     );
