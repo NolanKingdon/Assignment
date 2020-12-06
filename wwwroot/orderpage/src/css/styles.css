@@ -27,6 +27,12 @@ input, select {
     border: none;
 }
 
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* Card */
 
 .card-wrapper {
@@ -177,6 +183,24 @@ input, select {
     border: 2px solid var(--warning-red);
     border-radius: 4px;
     box-shadow: none;
+}
+
+/* Thank you page specific */
+.thank-you-img {
+    height: 40px;
+    width: 40px;
+}
+
+.thank-you-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 340px;
+}
+
+.thank-you-message * {
+    margin: 7px;
 }
 
 /* Button Styles */
