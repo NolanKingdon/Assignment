@@ -7,13 +7,20 @@ import cards from './data/cards';
 import axios from 'axios';
 import ThankYouPage from './components/ThankYouPage';
 
+/**
+ * Base level of the order/purchase app.
+ * 
+ * Tracks the credit card information and validation in the state and sends
+ * requests to the backend (/apiv1/purchase) to confirm purchases
+ */
 class App extends Component {
 
   constructor(props) {
     super(props);
 
+    // For more flexibility in the future, we could add a 'errorMessage' attribute to the card fields.
     this.state = {
-      currentPage: 'thankYou',
+      currentPage: 'order',
       currentItem: items[0],
       cardNumber: {value: '', valid: true},
       cardName: {value: '', valid: true},
@@ -24,6 +31,7 @@ class App extends Component {
       cards
     }
 
+    // Binding context to child functions
     this.changePage = this.changePage.bind(this);
     this.formHandler = this.formHandler.bind(this);
     this.formSubmission = this.formSubmission.bind(this);
@@ -35,6 +43,17 @@ class App extends Component {
     });
   }
 
+  /**
+   * Validates credit card is one of the accepted types by looking at the first number.
+   * 
+   * If that value is...
+   *  3 -> Amex
+   *  4 -> Visa
+   *  5 -> Mastercard
+   *  6 -> Discover
+   * 
+   * @param {Event} e Event Object
+   */
   validateCreditCardNumber(e) {
     let number = parseInt(e.target.value[0]);
       
@@ -64,6 +83,11 @@ class App extends Component {
     }
   }
 
+  /**
+   * Handles updates to the credit card purchase form and tracks the changes in state.
+   * 
+   * @param {Event} e Event object
+   */
   formHandler(e) {
     let field = e.target.name;
 
@@ -78,6 +102,11 @@ class App extends Component {
     });
   }
 
+  /**
+   * Handles the instance where the form is submitted using the submit button on the payment page.
+   * Checks to ensure all of our data is valid and will update the validity attribute of each field
+   * accordingly.
+   */
   formSubmission() {
     // TODO -> Refactor this a bit so it's more DRY.
     // Validation Checks
@@ -133,6 +162,27 @@ class App extends Component {
 
     }
 
+    // Expiration Date is not in the future
+    let today = new Date();
+
+    if (
+      (today.getMonth() <= parseInt(expiryMonth) && today.getFullYear() === parseInt(expiryYear)) ||
+      (today.getFullYear() > parseInt(expiryYear))
+      ) {
+      valid = false;
+
+      this.setState({
+        expiryMonth: { 
+          value: this.state.expiryMonth.value,
+          valid: false
+        },
+        expiryYear: { 
+          value: this.state.expiryYear.value,
+          valid: false
+        }
+      });
+    }
+
     // CCV is 3 digits
     if (cardCCV.length !== 3 && !numberRegex.test(cardCCV)) {
       valid = false;
@@ -174,6 +224,8 @@ class App extends Component {
 
   render() {
     let page;
+
+    // Bundling together the form input for ease of passing it to the component
     let formInput = {
       cardNumber: this.state.cardNumber,
       cardName: this.state.cardName,
@@ -182,6 +234,8 @@ class App extends Component {
       cardCCV: this.state.cardCCV
     };
 
+    // Acts as our router. Wasn't sure if using React-Dom-Router would interfere with the
+    // endpoints in the express side.
     switch (this.state.currentPage) {
       default:
       case 'order':

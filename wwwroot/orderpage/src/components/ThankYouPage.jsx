@@ -3,6 +3,11 @@ import ContentBody from './ContentBody';
 import Pane from './Pane';
 import greenCheck from '../images/greenCheck.svg';
 
+/**
+ * Simple thank you page. Displays after a successful purchase.
+ * 
+ * @param {Object} props 
+ */
 const ThankYouPage = (props) => {
     return (
         <div className='page thank-you-page'>

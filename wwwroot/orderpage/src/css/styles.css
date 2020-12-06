@@ -1,3 +1,10 @@
+/*
+
+Unfortunately I think I'm going to have to leave the CSS somewhat unfinished. I'm running pretty short on time and don't have the time
+to figure out what I didn't know.
+
+*/
+
 /* Globals */
 * {
     --pressed-purple: #5600E8;
@@ -34,7 +41,6 @@ input, select {
 }
 
 /* Card */
-
 .card-wrapper {
     background: #FFFFFF;
     box-shadow: -2px 2px 0px 5px #000000;

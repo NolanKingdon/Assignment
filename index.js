@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'wwwroot/orderpage/build/index.html'));
 });
 
-
 app.listen(port, () => {
     console.log(`Server Started. Listening on port ${port}`);
 });

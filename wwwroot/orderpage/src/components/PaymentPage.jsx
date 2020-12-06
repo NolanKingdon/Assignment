@@ -12,6 +12,11 @@ import alert from '../images/alert.svg';
 let months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 
 /**
+ * Main page of application. Allows user to input their credit card information and send a purchase
+ * to the backend.
+ * 
+ * In the future it may be a good idea to make the form itself a component to be used in other
+ * areas of the app. I unfortunately did not have time to implement this after I started.
  * 
  * @param {Object} props 
  *  props values:

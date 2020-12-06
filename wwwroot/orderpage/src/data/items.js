@@ -1,5 +1,9 @@
 import Chair from '../images/wingChair.png';
 
+/**
+ * Temporary store for our items. In the future this would ideally be moved to a database
+ * and accessed through our api.
+ */
 const items = [
     {
         name: 'Wing Chair',

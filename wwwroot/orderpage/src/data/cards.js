@@ -7,6 +7,10 @@ import DiscoverDisabled from '../images/cards/discoverDisabled.svg';
 import MastercardDisabled from '../images/cards/mastercardDisabled.svg';
 import VisaDisabled from '../images/cards/visaDisabled.svg';
 
+/**
+ * Data for our cards. Key corresponds to the correct starting number for each
+ * card provider.
+ */
 const cards = {
     3: {
         name: 'Amex',
