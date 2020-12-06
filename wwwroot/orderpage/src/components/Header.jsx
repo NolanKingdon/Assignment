@@ -10,7 +10,7 @@ const Header = (props) => {
 
     return (
         <div className='header-wrapper'>
-            <h2>{props.svg && props.svg}{props.text}</h2>
+            <h2>{props.svg && <img src={props.svg} alt='Icon'/>} {props.text}</h2>
         </div>
     );
 }
