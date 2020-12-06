@@ -18,6 +18,14 @@ html, body {
     background-color: var(--background-purple);
 }
 
+#root, .App {
+    height: 100%;
+}
+
+input, select {
+    border: none;
+}
+
 /* Card */
 
 .card-wrapper {
@@ -51,6 +59,7 @@ html, body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    justify-content: space-between;
     margin: 32px;
 }
 
@@ -105,6 +114,60 @@ html, body {
     font-weight: 600;
 }
 
+/* Payment Page Specific */
+.small-text {
+    font-size: 18px
+}
+
+.payment-text {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.confirmation-text {
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.payment-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.payment-container p {
+    margin: 5px 0;
+}
+
+.input-box-wrapper {
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    box-shadow: -2px 2px 0px #000000;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.input-box-wrapper img {
+    margin: 2px 5px;
+}
+
+.input-box-wrapper input::placeholder {
+    color: rgba(0, 0, 0, 0.38)
+}
+
+.expiration-date-selector {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.credit-card-images {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
 /* Button Styles */
 button {
     outline: none;
@@ -142,6 +205,10 @@ button {
     width: 92px;
     height: 40px;
     color: #000;
+}
+
+.btn-backward img {
+    margin: 0 3px;
 }
 
 .btn-backward:hover {
