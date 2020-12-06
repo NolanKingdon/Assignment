@@ -2,6 +2,7 @@ import { Component } from 'react';
 import items from './data/items';
 import './css/styles.css';
 import OrderPage from './components/OrderPage';
+import PaymentPage from './components/PaymentPage';
 
 class App extends Component {
 
@@ -9,7 +10,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentPage: 'order',
+      currentPage: 'payment',
       currentItem: items[0]
     }
 
@@ -33,6 +34,9 @@ class App extends Component {
                   pageChanger={this.changePage} />
         break;
       case 'payment':
+        page = <PaymentPage 
+                  item={this.state.currentItem} 
+                  pageChanger={this.changePage} />
         break;
     }
 
