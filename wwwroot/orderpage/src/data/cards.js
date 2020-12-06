@@ -7,31 +7,31 @@ import DiscoverDisabled from '../images/cards/discoverDisabled.svg';
 import MastercardDisabled from '../images/cards/mastercardDisabled.svg';
 import VisaDisabled from '../images/cards/visaDisabled.svg';
 
-const cards = [
-    {
+const cards = {
+    3: {
         name: 'Amex',
         enabledImg: Amex,
         disabledImg: AmexDisabled,
         enabled: false
     },
-    {
+    6: {
         name: 'Discover',
         enabledImg: Discover,
         disabledImg: DiscoverDisabled,
         enabled: false
     },
-    {
+    5: {
         name: 'Mastercard',
         enabledImg: Mastercard,
         disabledImg: MastercardDisabled,
         enabled: false
     },
-    {
+    4: {
         name: 'Visa',
         enabledImg: Visa,
         disabledImg: VisaDisabled,
         enabled: false
-    },
-];
+    }
+};
 
 export default cards;
