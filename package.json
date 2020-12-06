@@ -7,9 +7,9 @@
     "node": "14.x"
   },
   "scripts": {
-    "start": "npm run build && npm run start-server ",
+    "start": "npm install && npm run build && npm run start-server ",
     "start-dev": "cd wwwroot/orderpage && npm run build && npm run start",
-    "build": "cd wwwroot/orderpage && npm run build",
+    "build": "cd wwwroot/orderpage && npm install && npm run build",
     "start-server": "node index.js"
   },
   "author": "Nolan Kingdon",
