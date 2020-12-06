@@ -7,6 +7,7 @@
     --backward-pressed: #DBB2FF;
     --background-purple: #E5E5E5;
     --image-background: #F2E7FE;
+    --warning-red: #D90027;
 
     font-family: sans-serif;
 }
@@ -168,6 +169,16 @@ input, select {
     justify-content: space-between;
 }
 
+.warning-text {
+    color: var(--warning-red);
+}
+
+.invalid-input {
+    border: 2px solid var(--warning-red);
+    border-radius: 4px;
+    box-shadow: none;
+}
+
 /* Button Styles */
 button {
     outline: none;
@@ -194,6 +205,7 @@ button {
 
 .btn-forward:active {
     background-color: var(--pressed-purple);
+    box-shadow: 2px -2px 0px 5px #000;
 }
 
 .btn-forward {
@@ -217,4 +229,5 @@ button {
 
 .btn-backward:active {
     background-color: var(--backward-pressed);
+    box-shadow: 2px -2px 0px 5px #000;
 }
