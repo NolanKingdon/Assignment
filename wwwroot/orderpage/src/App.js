@@ -5,6 +5,7 @@ import OrderPage from './components/OrderPage';
 import PaymentPage from './components/PaymentPage';
 import cards from './data/cards';
 import axios from 'axios';
+import ThankYouPage from './components/ThankYouPage';
 
 class App extends Component {
 
@@ -12,7 +13,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentPage: 'payment',
+      currentPage: 'thankYou',
       currentItem: items[0],
       cardNumber: {value: '', valid: true},
       cardName: {value: '', valid: true},
@@ -156,7 +157,7 @@ class App extends Component {
       })
         .then( res => {
           if (res.status === 200) {
-            this.changePage('finish');
+            this.changePage('thankYou');
           } else {
             // Set card number to be invalid
             this.setState({
@@ -197,6 +198,9 @@ class App extends Component {
                   orderNumber={this.state.orderNumber} 
                   cards={this.state.cards} 
                   formSubmitter={this.formSubmission} />
+        break;
+      case 'thankYou':
+        page = <ThankYouPage />
         break;
     }
 
